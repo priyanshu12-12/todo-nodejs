@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO</title>
+  </head>
+  <body>
+    <h1 class="header">TODO</h1>
+    <hr />
+    <div class="formBody">
+      <form action="/" method="post" class="form">
+        <input
+          type="text"
+          name="text"
+          id="text"
+          class="text"
+          placeholder="Enter Task Here"
+          autofocus
+        />
+      </form>
+    </div>
+    <div class="tasks">
+      <i>
+        <ul>
+          <% task.forEach((todo,index) => { %>
+          <li id="<%= todo._id %>" onclick="deleteItem('<%= todo %>')">
+            <%= todo %>
+          </li>
+          <% }); %>
+        </ul>
+      </i>
+    </div>
+  </body>
+</html>
